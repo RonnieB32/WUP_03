@@ -36,7 +36,11 @@ basicCN + geom_boxplot()
 
 
 ## Numerical Summarys 
+```{r}
+favstats(alcohol~Seat,data=davisdata)
+```
 
+The data shows us that the mean set of the front is 1.8, the ,iddle is 3.28 and the back is 9.6. Which means this is showing us the back has a larger mean than the front and the middle which means the back has a larger alchohol consumption.  
 ## Inferential Tests
 
 ## Conclusions
