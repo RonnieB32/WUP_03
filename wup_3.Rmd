@@ -47,8 +47,15 @@ model1 <- aov(alcohol~Seat,data=davisdata)
 summary.aov(model1)
 ```
 
-The one way anova test shows us that the Pr results were 0.000116 which tells us that there is a 0.000116 chance that the back row would consume less alcohol than the front and middle rows. Which ultimately means there is an extremely small chance the back row would consume less alcohol than the front and middle rows. 
+The one way anova test shows us that the Pr results were 0.000116 which tells us that there is a 0.000116 chance that the back row would consume less alcohol than the front and middle rows. The middle row is different from the front row by being the larger in alochol consumption. 
 
+```{r}
+#we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
+par(mar = c(3, 8.7, 2, 2))
+plot(TukeyHSD(model1),las=2)
+```
+This three element shows us the front and back are different, the middle and back are different but the middle and front arent statistically different. 
 ## Conclusions
+through these tests we have figured out that the back and middle row are diffrent, the front and back row are diffrent, but the middle and front row are statistically the same in alcohol consumption.
 
 
