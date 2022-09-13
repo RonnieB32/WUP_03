@@ -40,8 +40,14 @@ basicCN + geom_boxplot()
 favstats(alcohol~Seat,data=davisdata)
 ```
 
-The data shows us that the mean set of the front is 1.8, the ,iddle is 3.28 and the back is 9.6. Which means this is showing us the back has a larger mean than the front and the middle which means the back has a larger alchohol consumption.  
+The data shows us that the mean set of the front is 1.8, the ,iddle is 3.28 and the back is 9.6. Which means this is showing us the back has a larger mean than the front and the middle which means the back has a larger alcohol consumption.  
 ## Inferential Tests
+```{r}
+model1 <- aov(alcohol~Seat,data=davisdata)
+summary.aov(model1)
+```
+
+The one way anova test shows us that the Pr results were 0.000116 which tells us that there is a 0.000116 chance that the back row would consume less alcohol than the front and middle rows. Which ultimately means there is an extremely small chance the back row would consume less alcohol than the front and middle rows. 
 
 ## Conclusions
 
