@@ -16,7 +16,10 @@ davisdata <- read.csv(file="UCDavis.csv")
 ```
 ## Our Goal is to answer this question Is there a difference between the alcohol consumed between the row
 ## you choose to sit in??
-
+```{r eval=FALSE}
+FinalData <- davisdata %>%
+mutate(across(where(is.character), as.factor))
+```
 ## Now with ggplot - first select the basic data
 
 ```{r}
@@ -28,12 +31,9 @@ basicCN <- ggplot(davisdata,aes(y=alcohol,x=Seat))
 basicCN + geom_boxplot()
 ```
   
+      This graph tells us that the people who sit in the back drik more alchohol thank the people who sit in the front.The median at the front is at 0 while the median around the middle is at 1 or 2. And the median in the back is at 4 or 5. so as you move to the back the more students that consume more alchohol increases. 
   
-### get fancy  
 
-```{r}
-basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
-```
 
 ## Numerical Summarys 
 
